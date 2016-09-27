@@ -1,6 +1,6 @@
 angular.module('ng.treeView', [])
 // declare our naïve directive
-  .directive('angularTreeview', function() {
+  .directive('angularTreeview', ['$compile', function ($compile) {
     return {
       restrict: 'A',
       link: function (scope, element, attrs) {
@@ -315,4 +315,4 @@ angular.module('ng.treeView', [])
         }
       }
     };
-  });
+  }]);
