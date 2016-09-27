@@ -11,11 +11,11 @@ angular.module('demo', ['ng.treeView'])
 
         searchLabel: 'searchLabel',
 
-        nodeId: "pointId",
+        nodeId: 'pointId',
 
-        nodeLabel: "pointName",
+        nodeLabel: 'pointName',
 
-        nodeChildren: "children",
+        nodeChildren: 'children',
 
         treeSelectNodeLabelCallBack : function (node) {
 
