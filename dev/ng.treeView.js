@@ -14,19 +14,19 @@ angular.module('ng.treeView', [])
           };
         }
 
-        //tree id
+        // tree id
         var treeId = attrs.treeId;
 
-        //tree model
+        // tree model
         var treeModel = attrs.treeModel || scope[treeId].treeModel;
 
-        //node id
+        // node id
         var nodeId = attrs.nodeId || (!!scope[treeId] && scope[treeId].nodeId ? scope[treeId].nodeId : 'id');
 
-        //node label
+        // node label
         var nodeLabel = attrs.nodeLabel || (!!scope[treeId] && scope[treeId].nodeLabel ? scope[treeId].nodeLabel : 'label');
 
-        //children
+        // children
         var nodeChildren = attrs.nodeChildren || (!!scope[treeId] && scope[treeId].nodeChildren ? scope[treeId].nodeChildren : 'children');
 
         // style
@@ -74,7 +74,7 @@ angular.module('ng.treeView', [])
             break;
         }
 
-        //tree template
+        // tree template
         var template =
           '<ul>' +
           '<li data-ng-repeat="node in ' + treeModel + '"' +
@@ -102,15 +102,15 @@ angular.module('ng.treeView', [])
           '</li>' +
           '</ul>';
 
-        //check tree id, tree model
+        // check tree id, tree model
         if (treeId && treeModel) {
 
-          //create tree object if not exists
+          // create tree object if not exists
           scope[treeId] = scope[treeId] || {};
 
-          //if node head clicks
+          // if node head clicks
           scope[treeId].selectNodeHead = scope[treeId].selectNodeHead || function (selectedNode) {
-              //Collapse or Expand
+              // Collapse or Expand
               selectedNode.collapsed = !selectedNode.collapsed;
 
               if (angular.isFunction(scope[treeId].treeSelectNodeHeadCallBack)) {
@@ -118,9 +118,9 @@ angular.module('ng.treeView', [])
               }
             };
 
-          //if node label clicks,
+          // if node label clicks,
           scope[treeId].selectNodeLabel = scope[treeId].selectNodeLabel || function (selectedNode) {
-              //remove highlight from previous node
+              // remove highlight from previous node
               if (scope[treeId].currentNode && scope[treeId].currentNode.selected) {
                 scope[treeId].currentNode.selected = undefined;
               }
@@ -130,10 +130,10 @@ angular.module('ng.treeView', [])
                 scope[treeId].selectNodeHead(selectedNode);
               }
 
-              //set highlight to selected node
+              // set highlight to selected node
               selectedNode.selected = 'selected';
 
-              //set currentNode
+              // set currentNode
               scope[treeId].currentNode = selectedNode;
 
               if (angular.equals(iconMode, 'checkbox')) {
@@ -308,7 +308,7 @@ angular.module('ng.treeView', [])
               }
             };
 
-          //Rendering template.
+          // Rendering template.
           element.html('').append($compile(template)(scope));
         } else {
           throw new Error('must set treeId && treeModel');
