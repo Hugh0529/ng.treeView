@@ -1,7 +1,7 @@
 module.exports = function (gulp, plugins, config, isProduction) {
     gulp.task('js', function () {
         gulp.src(config.jsFiles)
-            .pipe(plugins.concat('ng.treeView.js'))
+            // .pipe(plugins.concat('ng.treeView.js'))
             .pipe(plugins.if(isProduction, plugins.uglify()))
             .pipe(plugins.if(isProduction, plugins.rename({
                 suffix: '.min'
