@@ -38,5 +38,14 @@
 		- 在`iconMode`为'checkbox'时, 点击会触发`checkLabel`, 将node的主键从`selectedList`中加入或剔除, 主键可由`nodeKey`定义, 默认为'id'
 		- `selectAll` `removeAll`为选中全部以及移除全部的方法
 		- `selectAllCallback` `removeAllCallback`为选中全部以及移除全部的回调，可自己定义
+		
+##Demo
+[demo](http://embed.plnkr.co/Hhgl3KrAIIaICAwMiHb9/preview)
+		
+###TODO
+- style
+- service
+- 完善demo
+
 
 
