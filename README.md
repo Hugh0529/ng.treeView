@@ -40,7 +40,7 @@
 		- `selectAllCallback` `removeAllCallback`为选中全部以及移除全部的回调，可自己定义
 		
 ##Demo
-[demo](http://embed.plnkr.co/Hhgl3KrAIIaICAwMiHb9/preview)
+[demo](http://embed.plnkr.co/cuCnG1L6YCeBsmQ97CdD/)
 		
 ###TODO
 - style
